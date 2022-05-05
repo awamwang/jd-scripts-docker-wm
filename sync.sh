@@ -1,4 +1,10 @@
 #!/bin/bash
+# git config --global http.sslBackend "openssl"
+# git config --global http.sslCAInfo "/etc/ssl1.1/cert.pem"
+
+# echo "140.82.114.4 github.com" > /etc/hosts
+# service networking restart
+
 trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
 (
   exec 2<>/dev/null
@@ -7,8 +13,9 @@ trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
   git checkout .
   git pull
 ) || {
+  # git clone https://hub.fastgit.org/chinnkarahoi/jd-scripts-docker.git /jd-scripts-docker_tmp
   # git clone https://github.com/chinnkarahoi/jd-scripts-docker.git /jd-scripts-docker_tmp
-  git clone https://github.com/awamwang/jd-scripts-docker-wm.git /jd-scripts-docker_tmp
+  # git clone https://github.com/awamwang/jd-scripts-docker-wm.git /jd-scripts-docker_tmp
   [ -d /jd-scripts-docker_tmp ] && {
     rm -rf /jd-scripts-docker
     mv /jd-scripts-docker_tmp /jd-scripts-docker
@@ -23,7 +30,8 @@ trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
 ) || {
   #git clone --branch=master https://github.com/chinnkarahoi/jd_scripts.git /scripts_tmp
   # git clone --branch=main https://github.com/JDHelloWorld/jd_scripts.git /scripts_tmp
-  git clone --branch=main https://github.com/awamwang/jd_scripts.git /scripts_tmp
+  # git clone --branch=main https://github.com/awamwang/jd_scripts.git /scripts_tmp
+  # git clone --branch=main https://hub.fastgit.org/chinnkarahoi/jd_scripts.git /scripts_tmp
   [ -d /scripts_tmp ] && {
     rm -rf /scripts
     mv /scripts_tmp /scripts
@@ -36,8 +44,9 @@ trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
   git checkout .
   git pull
 ) || {
+  # git clone --branch=main https://hub.fastgit.org/chinnkarahoi/Loon.git /loon_tmp
   # git clone --branch=main https://github.com/chinnkarahoi/Loon.git /loon_tmp
-  git clone --branch=main https://github.com/awamwang/jd-scripts-loon.git /loon_tmp
+  # git clone --branch=main https://github.com/awamwang/jd-scripts-loon.git /loon_tmp
   [ -d /loon_tmp ] && {
     rm -rf /loon
     rm -rf /loon_tmp/backup
@@ -52,8 +61,9 @@ trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
   git checkout .
   git pull
 ) || {
-  git clone --branch=main https://github.com/awamwang/JD_tencent_scf.git /JD_tmp
+  # git clone --branch=main https://github.com/awamwang/JD_tencent_scf.git /JD_tmp
   # git clone --branch=main https://github.com/zero205/JD_tencent_scf.git /JD_tmp
+  # git clone --branch=main https://hub.fastgit.org/zero205/JD_tencent_scf.git /JD_tmp
   [ -d /JD_tmp ] && {
     rm -rf /JD
     rm -rf /JD_tmp/backup
@@ -63,7 +73,14 @@ trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
 }
 cd /scripts || exit 1
 cp /loon/*.js /scripts
+mkdir /scripts/docker
+cp /loon/docker/crontab_list.sh /scripts/docker/
 cp /JD/*.js /scripts
+
+echo "清理废弃"
+rm /scripts/jd_carnivalcity.js
+
+echo "开始安装"
 npm install || npm install --registry=https://registry.npm.taobao.org || exit 1
 [ -f /crontab.list ] && {
   cp /crontab.list /crontab.list.old
