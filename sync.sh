@@ -86,6 +86,7 @@ rm /scripts/jd_carnivalcity.js
 
 echo "开始安装"
 npm install || npm install --registry=https://registry.npm.taobao.org || exit 1
+npm install png-js dotenv || npm install png-js dotenv --registry=https://registry.npm.taobao.org || exit 1
 [ -f /crontab.list ] && {
   echo "存在旧的crontab.list"
   cp /crontab.list /crontab.list.old
