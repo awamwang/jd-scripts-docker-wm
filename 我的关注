@@ -1,8 +1,21 @@
-状态读取 jd_bean_change.js
+京豆签到  jd_bean_sign
+京豆读取 jd_bean_change.js
+京东多合一签到SCF jd_bean_sign
 宠汪汪积分兑换奖品 jd_joy_reward 
 【宠汪汪】 jd_joy jd_joy_steal（偷好友）  jd_joy_run(邀请助力)  jd_joy_feedPets
 京喜牧场  jd_jxmc jd_jxmc_mkmb
-极速免费签到 jd_signFree
+签到提现 jd_speed_redpocke
+进店领豆  jd_shop
+全民开红包  jd_redPacket
+【东东萌宠】  jd_pet
+【点点券】  jd_necklace
+直播  jd_live
+【京喜工厂】  jd_dreamFactory
+【京东工厂】  jd_jdfactory
+种豆得豆  jd_plantBean
+【东东农场】  jd_fruit
+财富岛  jd_cfd_loop
+<!-- crazyJoy挂机  jd_crazy_joy_coin   -->
 
 
 55 */1 * * *  bash /jd-scripts-docker/cron_wrapper bash /sync
