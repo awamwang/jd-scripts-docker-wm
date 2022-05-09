@@ -100,4 +100,3 @@
 5 7 * * * bash /jd-scripts-docker/cron_wrapper " node /scripts/jd_xg.js"
 0 * * * * bash /jd-scripts-docker/cron_wrapper " node /scripts/jd_xxl.js"
 40 * * * * bash /jd-scripts-docker/cron_wrapper " node /scripts/jd_xxl_gh.js"
-50 * * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_dreamFactory.js"

@@ -1,1 +1,2 @@
-50 * * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_dreamFactory.js"
+50 * * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_joy_park.js"
+49 9 * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_cfd_loop.js"
