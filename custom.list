@@ -1,2 +1,5 @@
 50 * * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_joy_park.js"
 49 9 * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_cfd_loop.js"
+26 9 * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_cash.js"
+*/34 * * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_joy_park.js"
+0 0,7,9,17,20 * * * bash /jd-scripts-docker/cron_wrapper "node /scripts/jd_joy_park_newtask.js"
