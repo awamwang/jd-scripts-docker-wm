@@ -15,7 +15,7 @@ trap 'cp /jd-scripts-docker/sync.sh /sync' Exit
 ) || {
   # git clone https://github.com/chinnkarahoi/jd-scripts-docker.git /jd-scripts-docker_tmp
   # git clone https://github.com/awamwang/jd-scripts-docker-wm.git /jd-scripts-docker_tmp
-  git clone https://hub.fastgit.org/awamwang/jd-scripts-docker-wm.git
+  git clone https://hub.fastgit.xyz/awamwang/jd-scripts-docker-wm.git
   mv /jd-scripts-docker-wm /jd-scripts-docker_tmp
   [ -d /jd-scripts-docker_tmp ] && {
     rm -rf /jd-scripts-docker
