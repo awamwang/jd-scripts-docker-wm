@@ -85,6 +85,7 @@ echo "清理废弃"
 rm /scripts/jd_carnivalcity.js
 rm /scripts/jd_beauty.js
 rm /scripts/jd_beauty_ex.js
+rm /scripts/jd_redPacket.js
 
 echo "开始安装"
 npm install || npm install --registry=https://registry.npm.taobao.org || exit 1
